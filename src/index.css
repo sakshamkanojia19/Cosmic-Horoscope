@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cosmic Horoscope Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Cosmic Background Colors */
+    --background: 235 25% 8%;
+    --foreground: 280 20% 95%;
+    --background-secondary: 240 30% 12%;
+
+    /* Card Colors */
+    --card: 240 25% 15%;
+    --card-foreground: 280 15% 90%;
+    --card-glow: 280 60% 20%;
+
+    /* Popover Colors */
+    --popover: 240 25% 15%;
+    --popover-foreground: 280 15% 90%;
+
+    /* Primary Cosmic Purple */
+    --primary: 280 80% 60%;
+    --primary-foreground: 240 25% 15%;
+    --primary-glow: 280 60% 40%;
+
+    /* Secondary Mystical Gold */
+    --secondary: 45 90% 65%;
+    --secondary-foreground: 240 25% 15%;
+    --secondary-glow: 45 80% 50%;
+
+    /* Muted Cosmic Gray */
+    --muted: 240 20% 25%;
+    --muted-foreground: 280 10% 70%;
+
+    /* Accent Celestial Blue */
+    --accent: 220 80% 70%;
+    --accent-foreground: 240 25% 15%;
+    --accent-glow: 220 60% 50%;
+
+    /* Destructive */
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 280 20% 95%;
+
+    /* Borders and Inputs */
+    --border: 240 30% 25%;
+    --input: 240 25% 20%;
+    --ring: 280 80% 60%;
+
+    /* Gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(280 80% 60%), hsl(220 80% 70%), hsl(45 90% 65%));
+    --gradient-background: linear-gradient(180deg, hsl(235 25% 8%), hsl(240 30% 12%));
+    --gradient-card: linear-gradient(135deg, hsl(240 25% 15%), hsl(280 25% 18%));
+    --gradient-mystical: radial-gradient(circle at 50% 50%, hsl(280 60% 20% / 0.3), transparent 70%);
+
+    /* Shadows */
+    --shadow-cosmic: 0 10px 30px -10px hsl(280 60% 20% / 0.4);
+    --shadow-glow: 0 0 40px hsl(280 80% 60% / 0.3);
+    --shadow-card: 0 8px 32px hsl(280 60% 10% / 0.5);
+
+    /* Border Radius */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+}
+
+/* Cosmic Animations and Effects */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(280 80% 60% / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(280 80% 60% / 0.6); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes cosmic-rotation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility Classes */
+.cosmic-gradient {
+  background: var(--gradient-cosmic);
+}
+
+.cosmic-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(280 80% 60% / 0.4),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
